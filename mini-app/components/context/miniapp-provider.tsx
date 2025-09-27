@@ -2,11 +2,14 @@
 
 import { createContext, useContext, useEffect, useState } from "react";
 import sdk, { Context } from "@farcaster/miniapp-sdk";
+import { MiniAppSDK } from "@farcaster/miniapp-sdk/dist/types";
 
 export interface MiniAppContext {
+  sdk: MiniAppSDK;
   context: Context.MiniAppContext | undefined;
 }
 const defaultSettings: MiniAppContext = {
+  sdk,
   context: undefined,
 };
 const MiniAppContext = createContext<MiniAppContext>(defaultSettings);
@@ -17,8 +20,7 @@ export function MiniAppProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     const ready = async () => {
       await Promise.all([
-        sdk.back.enableWebNavigation().catch(console.error),
-        sdk.context
+        context.sdk.context
           .then((context) =>
             setContext((oldContext) => {
               return { ...oldContext, context };
@@ -27,7 +29,7 @@ export function MiniAppProvider({ children }: { children: React.ReactNode }) {
           .catch(console.error),
       ]);
 
-      await sdk.actions.ready().catch(console.error);
+      await context.sdk.actions.ready().catch(console.error);
     };
 
     ready();
