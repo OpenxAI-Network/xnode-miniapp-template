@@ -1,3 +1,4 @@
+import { Share } from "@/components/share";
 import { Button } from "@/components/ui/button";
 import { Metadata } from "next";
 import Link from "next/link";
@@ -45,6 +46,7 @@ export default function Home() {
       <Button asChild>
         <Link href="/farcaster-info">Farcaster Info</Link>
       </Button>
+      <Share text="Check out this mini app template!" />
     </main>
   );
 }
