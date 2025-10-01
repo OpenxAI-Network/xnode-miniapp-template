@@ -1,3 +1,5 @@
+import { metadata } from "@/app/layout";
+
 export const dynamic = "force-dynamic";
 
 export async function GET() {
@@ -15,7 +17,7 @@ export async function GET() {
     accountAssociation,
     miniapp: {
       version: "1",
-      name: "Xnode Mini App Template",
+      name: metadata.title,
       iconUrl: `${appUrl}/icon.png`,
       homeUrl: appUrl,
       imageUrl: `${appUrl}/icon.png`,
