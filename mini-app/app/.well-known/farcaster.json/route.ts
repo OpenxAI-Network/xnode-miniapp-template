@@ -1,4 +1,4 @@
-import { metadata } from "@/app/layout";
+import { title } from "@/lib/metadata";
 
 export const dynamic = "force-dynamic";
 
@@ -17,7 +17,7 @@ export async function GET() {
     accountAssociation,
     miniapp: {
       version: "1",
-      name: metadata.title,
+      name: title,
       iconUrl: `${appUrl}/icon.png`,
       homeUrl: appUrl,
       imageUrl: `${appUrl}/icon.png`,
