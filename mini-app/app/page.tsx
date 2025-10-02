@@ -38,7 +38,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default function Home() {
   return (
-    <main className="flex flex-col gap-3 row-start-2 place-content-center place-items-center justify-center">
+    <main className="flex flex-col gap-3 place-items-center px-4">
       <span className="text-2xl">Xnode Mini App Template</span>
       <span className="text-muted-foreground">Mini app running on Xnode!</span>
       <Button asChild>

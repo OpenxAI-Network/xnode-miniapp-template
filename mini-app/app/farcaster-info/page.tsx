@@ -6,7 +6,7 @@ export default function FarcasterInfo() {
   const { context } = useMiniAppContext();
 
   return (
-    <main className="flex flex-col gap-3 row-start-2 place-content-center place-items-center justify-center">
+    <main className="flex flex-col gap-3 place-items-center px-4">
       <div className="flex flex-col gap-1 place-items-center">
         {context ? (
           <>
